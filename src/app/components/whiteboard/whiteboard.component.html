@@ -2,35 +2,37 @@
   <div class="task-manager-container">
 
     <div class="tasks-list-container has-background-light columns">
+      <!-- Drag drop goes here -->
       <div class="title has-text-primary column">
         <h1>Pending</h1>
-        <div class="card todo pressing">
-          <h2>Title</h2>
-          <p>assignee</p>
-          <p>Description</p>
-        </div>
-        <div class="card todo urgent">
-          <h2>Title</h2>
-          <p>assignee</p>
-          <p>Description</p>
+        <div *ngFor="let todo of pendingTodos" class="card todo {{todo.priority}}">
+          <h2>{{todo.title}}</h2>
+          <p>{{todo.assignee}}</p>
+          <p>{{todo.description}}</p>
         </div>
       </div>
+
       <div class="title has-text-primary column">
         <h1>In-Progress</h1>
-        <div class="card todo non-critical">
-          <h2>Title</h2>
-          <p>assignee</p>
-          <p>Description</p>
+        <div *ngFor="let todo of inProgressTodos" class="card todo {{todo.priority}}">
+          <h2>{{todo.title}}</h2>
+          <p>{{todo.assignee}}</p>
+          <p>{{todo.description}}</p>
         </div>
       </div>
       <div class="title has-text-primary column">
         <h1>Complete</h1>
-        <div class="card todo">
-          <p>Title</p>
-          <p>assignee</p>
-          <p>Description</p>
+        <div *ngFor="let todo of completeTodos" class="card todo {{todo.priority}}">
+          <h2>{{todo.title}}</h2>
+          <p>{{todo.assignee}}</p>
+          <p>{{todo.description}}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<!-- add on hover X to delete card -->
+<!-- Add priority on add card -->
+<!--  -->
