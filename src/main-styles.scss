@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200&display=swap");
+
+$purple: rgba(58, 31, 209, 0.452);
+$green: #0846333a;
+
+$light-green: #45f69e;
+$light: #f8f8f8;
+$dark-green: rgb(0, 100, 80);
+
+$family-sans-serif: "Montserrat",
+sans-serif;
+$primary: $green;
+$link: $light-green;
+
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+html {
+  background: linear-gradient(to right top, $purple, $green);
+}
+
+html,
+body {
+  min-height: 100%;
+}
