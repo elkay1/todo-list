@@ -10,14 +10,14 @@ export class TodoService {
     {
       title: "Get milk",
       description: "blah blah",
-      priority: "urgent",
+      priority: "Critical",
       status: "pending",
-      assignee: "ur mom"
+      assignee: "Johnny"
     },
     {
       title: "Get bread",
       description: "blah blah",
-      priority: "pressing",
+      priority: "Pressing",
       status: "pending",
       assignee: "Liam"
     }
@@ -27,7 +27,7 @@ export class TodoService {
     {
       title: "Sleep",
       description: "You know what",
-      priority: "non-critical",
+      priority: "Non-critical",
       status: "in-progress",
       assignee: "Fred"
     }
@@ -36,7 +36,7 @@ export class TodoService {
     {
       title: "Slept",
       description: "You know what",
-      priority: "non-critical",
+      priority: "Non-critical",
       status: "complete",
       assignee: "Fred"
     }

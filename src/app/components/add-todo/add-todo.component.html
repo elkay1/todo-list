@@ -1,8 +1,36 @@
 <div class="container">
-  <div class="control">
-    <input id="title" class="input" type="text" placeholder="Title">
-    <input id="assignee" class="input" type="text" placeholder="Assignee">
-    <input id="desc" class="input" type="text" placeholder="Description">
-    <button class="button" (click)="addTodo()">Submit</button>
+  <div class="control" id="control">
+
+    <input type="text" id="addTodo" class="input" placeholder="Add a todo" (click)="expandInput()">
+
+
+
+    <div class="modal" id="modal">
+      <div class="modal-background" (click)="closeModal()"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">What do you need to do?</p>
+          <button class="delete" aria-label="close" (click)="closeModal()"></button>
+        </header>
+        <section class="modal-card-body">
+          <input id="title" class="input" type="text" placeholder="Title">
+          <input id="assignee" class="input" type="text" placeholder="Assignee">
+          <input id="desc" class="input" type="text" placeholder="Description">
+          <!-- <input id="priority" class="input" type="text"> -->
+          <div class="select">
+            <select id="select">
+              <option>Priority</option>
+              <option>Non-Critical</option>
+              <option>Pressing</option>
+              <option>Critical</option>
+            </select>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" (click)="addTodo()" (click)="closeModal()">Add Todo</button>
+          <button class="button" (click)="closeModal()">Cancel</button>
+        </footer>
+      </div>
+    </div>
   </div>
 </div>

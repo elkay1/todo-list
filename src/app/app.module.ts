@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -16,7 +17,12 @@ import { TodoService } from "../app/service/todo.service";
     WhiteboardComponent,
     AddTodoComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    DragDropModule
+  ],
   providers: [TodoService],
   bootstrap: [AppComponent]
 })

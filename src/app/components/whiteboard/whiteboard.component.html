@@ -1,28 +1,32 @@
 <div class="centered-content">
-  <div class="task-manager-container">
+  <div cdkDropListGroup class="task-manager-container">
 
     <div class="tasks-list-container has-background-light columns">
       <!-- Drag drop goes here -->
-      <div class="title has-text-primary column">
+      <div cdkDropList #pendingList="cdkDropList" [cdkDropListData]="pendingTodos" (cdkDropListDropped)="drop($event)"
+        class="title has-text-primary column">
         <h1>Pending</h1>
-        <div *ngFor="let todo of pendingTodos" class="card todo {{todo.priority}}">
+        <div cdkDrag *ngFor="let todo of pendingTodos" class="card todo {{todo.priority}}"
+          (click)="listenForDoubleClick(this);" (blur)="this.contentEditable=false;">
           <h2>{{todo.title}}</h2>
           <p>{{todo.assignee}}</p>
           <p>{{todo.description}}</p>
         </div>
       </div>
 
-      <div class="title has-text-primary column">
+      <div cdkDropList #inProgressList="cdkDropList" [cdkDropListData]="inProgressTodos"
+        (cdkDropListDropped)="drop($event)" class="title has-text-primary column">
         <h1>In-Progress</h1>
-        <div *ngFor="let todo of inProgressTodos" class="card todo {{todo.priority}}">
+        <div cdkDrag *ngFor="let todo of inProgressTodos" class="card todo {{todo.priority}}">
           <h2>{{todo.title}}</h2>
           <p>{{todo.assignee}}</p>
           <p>{{todo.description}}</p>
         </div>
       </div>
-      <div class="title has-text-primary column">
+      <div cdkDropList #completeList="cdkDropList" [cdkDropListData]="completeTodos" (cdkDropListDropped)="drop($event)"
+        class="title has-text-primary column">
         <h1>Complete</h1>
-        <div *ngFor="let todo of completeTodos" class="card todo {{todo.priority}}">
+        <div cdkDrag *ngFor="let todo of completeTodos" class="card todo {{todo.priority}}">
           <h2>{{todo.title}}</h2>
           <p>{{todo.assignee}}</p>
           <p>{{todo.description}}</p>
@@ -34,5 +38,4 @@
 
 
 <!-- add on hover X to delete card -->
-<!-- Add priority on add card -->
 <!--  -->
