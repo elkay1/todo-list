@@ -33,18 +33,17 @@ export class AddTodoComponent implements OnInit {
     let priority: any = <HTMLSelectElement>document.getElementById("priority");
     let selectedPriority = priority.options[priority.selectedIndex].value;
 
-    // pressing.classList.add("is-danger");
-    if (selectedPriority === "Pressing") {
+    if (selectedPriority === "Medium") {
       priority.classList.remove("nonCritical");
       priority.classList.remove("critical");
-      priority.classList.add("pressing");
+      priority.classList.add("medium");
     } else if (selectedPriority === "Critical") {
-      priority.classList.remove("pressing");
+      priority.classList.remove("medium");
       priority.classList.remove("nonCritical");
       priority.classList.add("critical");
     } else {
       priority.classList.remove("critical");
-      priority.classList.remove("pressing");
+      priority.classList.remove("medium");
       priority.classList.add("nonCritical");
     }
   }

@@ -18,7 +18,7 @@ export class TodoService {
     {
       title: "Get bread",
       description: "blah blah",
-      priority: "Pressing",
+      priority: "Medium",
       status: "Pending",
       assignee: "Liam"
     }
