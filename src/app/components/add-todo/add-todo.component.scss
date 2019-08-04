@@ -43,3 +43,23 @@ input {
   display: inline;
   margin-right: 10px;
 }
+
+@media only screen and (max-width: 768px) {
+  .modal-card {
+    width: 85%;
+  }
+
+
+}
+
+.pressing {
+  background-color: rgba(245, 245, 100, 0.644);
+}
+
+.critical {
+  background-color: rgba(250, 135, 135, 0.623);
+}
+
+.nonCritical {
+  background-color: rgba(59, 221, 59, 0.753);
+}

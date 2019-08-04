@@ -33,6 +33,15 @@ export class WhiteboardComponent implements OnInit {
     this.TodoService.deletePendingTodo(todo);
   }
 
+  editTodo() {
+    let card = <HTMLDivElement>document.querySelector(".card");
+
+    card.removeAttribute("cdkDrag");
+    card.setAttribute("contenteditable", "true");
+
+    console.log(card);
+  }
+
   // Change card array on drag/drop
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

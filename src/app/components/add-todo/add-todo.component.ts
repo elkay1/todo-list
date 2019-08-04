@@ -29,6 +29,26 @@ export class AddTodoComponent implements OnInit {
     dropdown.classList.toggle("is-active");
   }
 
+  changeOptionColor() {
+    let priority: any = <HTMLSelectElement>document.getElementById("priority");
+    let selectedPriority = priority.options[priority.selectedIndex].value;
+
+    // pressing.classList.add("is-danger");
+    if (selectedPriority === "Pressing") {
+      priority.classList.remove("nonCritical");
+      priority.classList.remove("critical");
+      priority.classList.add("pressing");
+    } else if (selectedPriority === "Critical") {
+      priority.classList.remove("pressing");
+      priority.classList.remove("nonCritical");
+      priority.classList.add("critical");
+    } else {
+      priority.classList.remove("critical");
+      priority.classList.remove("pressing");
+      priority.classList.add("nonCritical");
+    }
+  }
+
   addTodo() {
     let title: string = (<HTMLInputElement>document.getElementById("title"))
       .value;
@@ -50,6 +70,7 @@ export class AddTodoComponent implements OnInit {
       status: selectedStatus
     };
 
+    // Validate title field is filled
     if (title === "") {
       alert("Title must be filled out");
     } else {
@@ -62,6 +83,8 @@ export class AddTodoComponent implements OnInit {
       }
       console.log(selectedStatus);
     }
+
+    // Set fields to empty
     (<HTMLInputElement>document.getElementById("title")).value = "";
     (<HTMLInputElement>document.getElementById("assignee")).value = "";
     (<HTMLInputElement>document.getElementById("desc")).value = "";

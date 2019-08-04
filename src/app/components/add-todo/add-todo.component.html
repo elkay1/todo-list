@@ -18,7 +18,7 @@
           <input id="assignee" class="input" type="text" placeholder="Assignee">
           <input id="desc" class="input" type="text" placeholder="Description">
           <!-- <input id="priority" class="input" type="text"> -->
-          <div class="select">
+          <div class="select" (change)="changeOptionColor()">
             <select id="priority">
               <option disabled>Priority</option>
               <option>Non-Critical</option>

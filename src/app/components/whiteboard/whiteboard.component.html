@@ -7,7 +7,8 @@
       <div cdkDropList #pendingList="cdkDropList" [cdkDropListData]="pendingTodos" (cdkDropListDropped)="drop($event)"
         class="title has-text-primary column">
         <h1>Pending</h1>
-        <div contenteditable cdkDrag *ngFor="let todo of pendingTodos" class="card todo {{todo.priority}}">
+        <div cdkDrag (dblclick)="editTodo(element)" *ngFor="let todo of pendingTodos"
+          class="card todo {{todo.priority}}">
           <div class="delete is-danger" (click)="deletePendingTodo()">x</div>
           <h2 id="todoTitle">{{todo.title}}</h2>
           <p class="assignee">{{todo.assignee}}</p>
