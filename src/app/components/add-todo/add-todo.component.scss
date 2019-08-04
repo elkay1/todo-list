@@ -1,12 +1,45 @@
 .container {
   margin-bottom: 50px;
   width: 30%;
+
+}
+
+.control {
+  text-align: center;
 }
 
 input {
   margin: 3px;
+  width: 95%;
 }
 
 .hidden {
   display: none;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 3.75rem;
+  height: 3.75rem;
+  background-color: #00d1b2;
+  // transform: translate(1.25rem, -1.875rem);
+  color: white;
+  font-size: 3.125rem;
+  text-align: center;
+  line-height: 100%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.circle:hover {
+  background-color: #00967f;
+}
+
+.circle:active {
+  transform: scale(0.95);
+}
+
+.select select {
+  display: inline;
+  margin-right: 10px;
 }

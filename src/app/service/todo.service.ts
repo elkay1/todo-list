@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Todo } from "../models/Todo";
 import { Observable } from "rxjs";
+import { AddTodoComponent } from "../components/add-todo/add-todo.component";
 
 @Injectable({
   providedIn: "root"
@@ -11,14 +12,14 @@ export class TodoService {
       title: "Get milk",
       description: "blah blah",
       priority: "Critical",
-      status: "pending",
+      status: "Pending",
       assignee: "Johnny"
     },
     {
       title: "Get bread",
       description: "blah blah",
       priority: "Pressing",
-      status: "pending",
+      status: "Pending",
       assignee: "Liam"
     }
   ];
@@ -27,8 +28,8 @@ export class TodoService {
     {
       title: "Sleep",
       description: "You know what",
-      priority: "Non-critical",
-      status: "in-progress",
+      priority: "Non-Critical",
+      status: "In-Progress",
       assignee: "Fred"
     }
   ];
@@ -36,8 +37,8 @@ export class TodoService {
     {
       title: "Slept",
       description: "You know what",
-      priority: "Non-critical",
-      status: "complete",
+      priority: "Non-Critical",
+      status: "Complete",
       assignee: "Fred"
     }
   ];
@@ -54,7 +55,23 @@ export class TodoService {
   getInProgressTodos() {
     return this.inProgressTodos;
   }
-  addTodo(todo) {
+  addPendingTodo(todo: Todo) {
     this.pendingTodos.push(todo);
+  }
+  addInProgressTodo(todo: Todo) {
+    this.inProgressTodos.push(todo);
+  }
+  addcompleteTodo(todo: Todo) {
+    this.completeTodos.push(todo);
+  }
+
+  deleteInProgressTodo(todo: Todo) {
+    this.inProgressTodos.splice(this.inProgressTodos.indexOf(todo), 1);
+  }
+  deletePendingTodo(todo: Todo) {
+    this.pendingTodos.splice(this.pendingTodos.indexOf(todo), 1);
+  }
+  deleteCompleteTodo(todo: Todo) {
+    this.completeTodos.splice(this.completeTodos.indexOf(todo), 1);
   }
 }

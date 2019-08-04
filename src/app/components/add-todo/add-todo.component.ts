@@ -8,7 +8,7 @@ import { TodoService } from "../../service/todo.service";
   styleUrls: ["./add-todo.component.scss"]
 })
 export class AddTodoComponent implements OnInit {
-  constructor(public TodoService: TodoService) {}
+  constructor(private TodoService: TodoService) {}
 
   ngOnInit() {}
 
@@ -37,21 +37,35 @@ export class AddTodoComponent implements OnInit {
     )).value;
     let desc: string = (<HTMLInputElement>document.getElementById("desc"))
       .value;
-    let priority: any = <HTMLSelectElement>document.getElementById("select");
+    let priority: any = <HTMLSelectElement>document.getElementById("priority");
     let selectedPriority = priority.options[priority.selectedIndex].value;
+    let status: any = <HTMLSelectElement>document.getElementById("status");
+    let selectedStatus = status.options[status.selectedIndex].value;
 
     let todo: Todo = {
       title: title,
       assignee: assignee,
       description: desc,
-      priority: selectedPriority
+      priority: selectedPriority,
+      status: selectedStatus
     };
 
-    this.TodoService.addTodo(todo);
-    console.log(this.TodoService.pendingTodos.length);
-
+    if (title === "") {
+      alert("Title must be filled out");
+    } else {
+      if (selectedStatus == "Pending") {
+        this.TodoService.addPendingTodo(todo);
+      } else if (selectedStatus == "In-Progress") {
+        this.TodoService.addInProgressTodo(todo);
+      } else {
+        this.TodoService.addcompleteTodo(todo);
+      }
+      console.log(selectedStatus);
+    }
     (<HTMLInputElement>document.getElementById("title")).value = "";
     (<HTMLInputElement>document.getElementById("assignee")).value = "";
     (<HTMLInputElement>document.getElementById("desc")).value = "";
+    priority.selectedIndex = 0;
+    status.selectedIndex = 0;
   }
 }

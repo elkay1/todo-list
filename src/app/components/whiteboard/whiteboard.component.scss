@@ -9,14 +9,14 @@
 }
 
 .task-manager-container {
-  display: flex;
+  // display: flex;
   width: 70%;
   min-height: 50%;
 }
 
 
 .tasks-list-container {
-  display: flex;
+  // display: flex;
   flex-grow: 1;
   text-align: center;
   border-radius: 5px;
@@ -27,9 +27,10 @@
 
 }
 
+// Title Div style
 .title {
   font-size: 1.3rem;
-  max-height: 15%;
+  max-height: 100%;
   text-transform: uppercase;
   letter-spacing: 2px;
 
@@ -37,11 +38,13 @@
     border-right: 1px solid black;
   }
 
+
+
 }
 
-
+// Card styles
 .card.todo:nth-of-type(1) {
-  margin-top: 50px;
+  margin-top: 1.8em;
 }
 
 .card {
@@ -50,6 +53,7 @@
   -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.21);
   -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.21);
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.21);
+  padding: .5rem;
 
   &.Critical {
     border: 2px solid rgba(250, 135, 135, 0.623);
@@ -59,15 +63,50 @@
     border: 2px solid rgba(245, 245, 100, 0.644);
   }
 
-  &.Non-critical {
+  &.Non-Critical {
     border: 2px solid rgba(59, 221, 59, 0.753);
   }
 }
 
-p {
-  font-size: 15px;
+
+
+.delete {
+  opacity: 0;
+  color: red;
+  background-color: rgba(245, 41, 41, 0.849);
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 2px;
+  -webkit-transition: opacity .7s ease-in;
+  -moz-transition: opacity .7s ease-in;
+  -o-transition: opacity .7s ease-in;
+  -ms-transition: opacity .7s ease-in;
+  transition: opacity .7s ease-in
 }
 
+.card:hover .delete {
+  opacity: 1;
+}
+
+// Card text style
+#todoTitle {
+  font-weight: 600;
+}
+
+.assignee {
+  font-size: .6rem;
+}
+
+
+
+.description {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+
+// Drag and drop styles
 .cdk-drag-preview {
   box-sizing: border-box;
   border-radius: 4px;
@@ -91,3 +130,45 @@ p {
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+
+
+/* Large devices (laptops/desktops, 1024px and up) */
+// @media only screen and (max-width: 715px) {
+//   .tasks-list-container {
+//     display: flex;
+//     flex-direction: row;
+//   }
+
+
+
+//   .title {
+//     font-size: 1rem;
+//     width: 65%;
+//     border-right: none;
+//     border-bottom: 1px solid black;
+//     float: left;
+
+
+
+
+//     &:nth-of-type(-n + 2) {
+//       border-right: none;
+//     }
+//   }
+
+// }
+
+@media only screen and (max-width: 768px) {
+  .title {
+
+    &:nth-of-type(-n + 2) {
+      border-right: none;
+    }
+  }
+
+  .card {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {}

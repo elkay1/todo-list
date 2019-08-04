@@ -1,8 +1,9 @@
 <div class="container">
   <div class="control" id="control">
 
-    <input type="text" id="addTodo" class="input" placeholder="Add a todo" (click)="expandInput()">
+    <!-- <input type="text" id="addTodo" class="input" placeholder="Add a todo" (click)="expandInput()" autocomplete="off"> -->
 
+    <div (click)="expandInput()" id="addTodo" class="circle">+</div>
 
 
     <div class="modal" id="modal">
@@ -13,17 +14,25 @@
           <button class="delete" aria-label="close" (click)="closeModal()"></button>
         </header>
         <section class="modal-card-body">
-          <input id="title" class="input" type="text" placeholder="Title">
+          <input id="title" class="input" type="text" placeholder="Title" autocomplete="off">
           <input id="assignee" class="input" type="text" placeholder="Assignee">
           <input id="desc" class="input" type="text" placeholder="Description">
           <!-- <input id="priority" class="input" type="text"> -->
           <div class="select">
-            <select id="select">
-              <option>Priority</option>
+            <select id="priority">
+              <option disabled>Priority</option>
               <option>Non-Critical</option>
               <option>Pressing</option>
               <option>Critical</option>
             </select>
+            <div class="select">
+              <select id="status">
+                <option disabled>Status</option>
+                <option>Pending</option>
+                <option>In-Progress</option>
+                <option>Complete</option>
+              </select>
+            </div>
           </div>
         </section>
         <footer class="modal-card-foot">

@@ -26,15 +26,14 @@ export class WhiteboardComponent implements OnInit {
     this.inProgressTodos = this.TodoService.getInProgressTodos();
   }
 
-  listenForDoubleClick(element) {
-    element.contentEditable = true;
-    setTimeout(function() {
-      if (document.activeElement !== element) {
-        element.contentEditable = false;
-      }
-    }, 300);
+  deletePendingTodo(todo: Todo) {
+    console.log(this.TodoService.pendingTodos);
+    console.log(todo);
+
+    this.TodoService.deletePendingTodo(todo);
   }
 
+  // Change card array on drag/drop
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
