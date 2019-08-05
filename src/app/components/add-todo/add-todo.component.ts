@@ -70,8 +70,8 @@ export class AddTodoComponent implements OnInit {
     };
 
     // Validate title field is filled
-    if (title === "") {
-      alert("Title must be filled out");
+    if (title === "" || selectedStatus === "Status") {
+      alert("Title and Status must be filled out");
     } else {
       if (selectedStatus == "Pending") {
         this.TodoService.addPendingTodo(todo);
@@ -89,5 +89,6 @@ export class AddTodoComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("desc")).value = "";
     priority.selectedIndex = 0;
     status.selectedIndex = 0;
+    this.changeOptionColor();
   }
 }

@@ -26,20 +26,17 @@ export class WhiteboardComponent implements OnInit {
     this.inProgressTodos = this.TodoService.getInProgressTodos();
   }
 
-  deletePendingTodo(todo: Todo) {
-    console.log(this.TodoService.pendingTodos);
-    console.log(todo);
+  editTodo() {
+    let card: any = <HTMLDivElement>document.querySelector(".card");
 
-    this.TodoService.deletePendingTodo(todo);
+    card.contentEditable = true;
+    console.log(card);
   }
 
-  editTodo() {
-    let card = <HTMLDivElement>document.querySelector(".card");
+  addHandle() {
+    let card: any = <HTMLDivElement>document.querySelector(".card");
 
-    card.removeAttribute("cdkDrag");
-    card.setAttribute("contenteditable", "true");
-
-    console.log(card);
+    card.classList.add("handle");
   }
 
   // Change card array on drag/drop

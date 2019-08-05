@@ -64,14 +64,4 @@ export class TodoService {
   addcompleteTodo(todo: Todo) {
     this.completeTodos.push(todo);
   }
-
-  deleteInProgressTodo(todo: Todo) {
-    this.inProgressTodos.splice(this.inProgressTodos.indexOf(todo), 1);
-  }
-  deletePendingTodo(todo: Todo) {
-    this.pendingTodos.splice(this.pendingTodos.indexOf(todo), 1);
-  }
-  deleteCompleteTodo(todo: Todo) {
-    this.completeTodos.splice(this.completeTodos.indexOf(todo), 1);
-  }
 }
