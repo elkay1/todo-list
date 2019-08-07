@@ -31,13 +31,6 @@
   max-height: 100%;
   text-transform: uppercase;
   letter-spacing: 2px;
-
-  // &:nth-of-type(-n + 2) {
-  //   border-right: 1px solid black;
-  // }
-
-
-
 }
 
 
@@ -164,39 +157,9 @@
   font-weight: 600;
 }
 
-/* Large devices (laptops/desktops, 1024px and up) */
-// @media only screen and (max-width: 715px) {
-//   .tasks-list-container {
-//     display: flex;
-//     flex-direction: row;
-//   }
-
-
-
-//   .title {
-//     font-size: 1rem;
-//     width: 65%;
-//     border-right: none;
-//     border-bottom: 1px solid black;
-//     float: left;
-
-
-
-
-//     &:nth-of-type(-n + 2) {
-//       border-right: none;
-//     }
-//   }
-
-// }
 
 @media only screen and (max-width: 768px) {
-  .title {
 
-    &:nth-of-type(-n + 2) {
-      border-right: none;
-    }
-  }
 
   .card {
     font-size: 1rem;

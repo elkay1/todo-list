@@ -5,7 +5,6 @@ import {
   transferArrayItem
 } from "@angular/cdk/drag-drop";
 
-import { Todo } from "../../models/Todo";
 import { TodoService } from "src/app/service/todo.service";
 
 @Component({
@@ -33,6 +32,7 @@ export class WhiteboardComponent implements OnInit {
     console.log(card);
   }
 
+  // Add handle for dragging
   addHandle() {
     let card: any = <HTMLDivElement>document.querySelector(".card");
 

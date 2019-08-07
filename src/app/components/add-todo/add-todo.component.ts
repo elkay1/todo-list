@@ -12,12 +12,14 @@ export class AddTodoComponent implements OnInit {
 
   ngOnInit() {}
 
+  // Open modal for adding todo
   expandInput() {
     let input = <HTMLInputElement>document.getElementById("addTodo");
     let modal = <HTMLDivElement>document.querySelector(".modal");
     modal.classList.add("is-active");
   }
 
+  // Close modal on click outside box
   closeModal() {
     let closeModal = <HTMLDivElement>document.querySelector(".delete");
     let modal = <HTMLDivElement>document.querySelector(".modal");

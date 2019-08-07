@@ -10,14 +10,14 @@ export class TodoService {
   pendingTodos: Todo[] = [
     {
       title: "Get milk",
-      description: "blah blah",
+      description: "Get some milk from IGA",
       priority: "Critical",
       status: "Pending",
       assignee: "Johnny"
     },
     {
       title: "Get bread",
-      description: "blah blah",
+      description: "Bread from IGA",
       priority: "Medium",
       status: "Pending",
       assignee: "Liam"
@@ -27,16 +27,16 @@ export class TodoService {
   inProgressTodos: Todo[] = [
     {
       title: "Sleep",
-      description: "You know what",
+      description: "I need it",
       priority: "Non-Critical",
       status: "In-Progress",
-      assignee: "Fred"
+      assignee: "Liam"
     }
   ];
   completeTodos: Todo[] = [
     {
       title: "Slept",
-      description: "You know what",
+      description: "I got it",
       priority: "Non-Critical",
       status: "Complete",
       assignee: "Fred"
