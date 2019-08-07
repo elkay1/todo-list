@@ -92,5 +92,8 @@ export class AddTodoComponent implements OnInit {
     priority.selectedIndex = 0;
     status.selectedIndex = 0;
     this.changeOptionColor();
+    priority.classList.remove("nonCritical");
+    priority.classList.remove("critical");
+    priority.classList.remove("medium");
   }
 }
