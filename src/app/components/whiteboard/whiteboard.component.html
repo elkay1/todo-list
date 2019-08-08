@@ -21,8 +21,8 @@
           <!--          -->
           <div class="delete is-danger" (click)="pendingTodos.splice(i, 1)">x</div>
           <h2 id="todoTitle">{{todo.title}}</h2>
-          <p class="assignee">{{todo.assignee}}</p>
           <p class="description">{{todo.description}}</p>
+          <p class="assignee">{{todo.assignee}}</p>
         </div>
       </div>
 
@@ -43,8 +43,8 @@
           <!--           -->
           <div class="delete is-danger" (click)="inProgressTodos.splice(i, 1)">x</div>
           <h2 id="todoTitle">{{todo.title}}</h2>
-          <p class="assignee">{{todo.assignee}}</p>
           <p class="description">{{todo.description}}</p>
+          <p class="assignee">{{todo.assignee}}</p>
         </div>
       </div>
       <div cdkDropList #completeList="cdkDropList" [cdkDropListData]="completeTodos" (cdkDropListDropped)="drop($event)"
@@ -64,8 +64,8 @@
           <!--          -->
           <div class="delete is-danger" (click)="completeTodos.splice(i, 1)">x</div>
           <h2 id="todoTitle">{{todo.title}}</h2>
-          <p class="assignee">{{todo.assignee}}</p>
           <p class="description">{{todo.description}}</p>
+          <p class="assignee">{{todo.assignee}}</p>
         </div>
       </div>
     </div>

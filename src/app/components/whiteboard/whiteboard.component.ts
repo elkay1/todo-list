@@ -28,7 +28,6 @@ export class WhiteboardComponent implements OnInit {
   editTodo() {
     let card: any = <HTMLDivElement>document.querySelector(".card");
     card.contentEditable = true;
-
     console.log(card);
   }
 
