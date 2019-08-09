@@ -19,11 +19,17 @@ export class AddTodoComponent implements OnInit {
     modal.classList.add("is-active");
   }
 
-  // Close modal on click outside box
+  // Close modal on click outside box and reset dropdowns
   closeModal() {
+    let priority: any = <HTMLSelectElement>document.getElementById("priority");
     let closeModal = <HTMLDivElement>document.querySelector(".delete");
     let modal = <HTMLDivElement>document.querySelector(".modal");
+    let status: any = <HTMLSelectElement>document.getElementById("status");
+
     modal.classList.remove("is-active");
+    status.selectedIndex = 0;
+    priority.selectedIndex = 0;
+    this.changeOptionColor();
   }
 
   toggleDropdown() {
@@ -43,10 +49,14 @@ export class AddTodoComponent implements OnInit {
       priority.classList.remove("medium");
       priority.classList.remove("nonCritical");
       priority.classList.add("critical");
-    } else {
+    } else if (selectedPriority === "Non-Critical") {
       priority.classList.remove("critical");
       priority.classList.remove("medium");
       priority.classList.add("nonCritical");
+    } else {
+      priority.classList.remove("nonCritical");
+      priority.classList.remove("critical");
+      priority.classList.remove("medium");
     }
   }
 
@@ -71,7 +81,7 @@ export class AddTodoComponent implements OnInit {
       status: selectedStatus
     };
 
-    // Validate title field is filled
+    // Validate title and status fields are filled
     if (title === "" || selectedStatus === "Status") {
       alert("Title and Status must be filled out");
     } else {
@@ -92,8 +102,5 @@ export class AddTodoComponent implements OnInit {
     priority.selectedIndex = 0;
     status.selectedIndex = 0;
     this.changeOptionColor();
-    priority.classList.remove("nonCritical");
-    priority.classList.remove("critical");
-    priority.classList.remove("medium");
   }
 }

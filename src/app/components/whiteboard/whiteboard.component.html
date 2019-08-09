@@ -47,6 +47,8 @@
           <p class="assignee">{{todo.assignee}}</p>
         </div>
       </div>
+
+
       <div cdkDropList #completeList="cdkDropList" [cdkDropListData]="completeTodos" (cdkDropListDropped)="drop($event)"
         class="title has-text-primary column">
         <h1>Complete</h1>
